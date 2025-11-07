@@ -27,13 +27,15 @@ export default function App() {
 							Welcome to Epic News, where the latest developments in tech are
 							found here!
 						</p>
-						<img
-							className="h-60 w-60 rounded-full object-cover"
-							src={portrait1}
-							alt="Portrait1"
-						/>
-						<h2 className="mb-1 text-white">Bob Green</h2>
-						<h3 className="text-gray-500">Senior Designer</h3>
+						<div className="mt-8 flex w-full max-w-xs flex-col items-center rounded-2xl bg-sky-950 p-8 shadow-xl">
+							<img
+								className="mb-6 h-40 w-40 rounded-full object-cover"
+								src={portrait1}
+								alt="Portrait1"
+							/>
+							<h2 className="mb-1 text-white">Bob Green</h2>
+							<h3 className="text-gray-500">Senior Designer</h3>
+						</div>
 						<button className="lg:text:xl rounded bg-red-500 px-4 py-2 font-bold text-white shadow-xl hover:cursor-pointer hover:bg-amber-500 md:text-lg">
 							Breaking News
 						</button>
