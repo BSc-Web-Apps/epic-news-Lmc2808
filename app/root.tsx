@@ -1,3 +1,4 @@
+import { RiTwitterXFill, RiLinkedinBoxFill } from 'react-icons/ri'
 import { useLoaderData } from 'react-router'
 import { type Route } from './+types/root.ts'
 import { type loader } from './__root.server.tsx'
@@ -6,6 +7,8 @@ import Document from './components/shared-layout/Document.tsx'
 import { useNonce } from './utils/nonce-provider.ts'
 import rootLinkElements from './utils/providers/rootLinkElements.ts'
 import portrait1 from '~/assets/jpg/portrait-01.jpg'
+import portrait2 from '~/assets/jpg/portrait-02.jpg'
+import portrait3 from '~/assets/jpg/portrait-03.jpg'
 
 export const links: Route.LinksFunction = () => {
 	return rootLinkElements
@@ -23,27 +26,32 @@ export default function App() {
 				<div className="flex-1">
 					<main className="grid h-full place-items-center">
 						<h1 className="text-mega">This is Epic News</h1>
-						<p className="text-base text-white md:text-lg lg:text-xl">
-							Welcome to Epic News, where the latest developments in tech are
-							found here!
-						</p>
-						<div className="mt-8 flex w-full max-w-xs flex-col items-center rounded-2xl bg-sky-950 p-8 shadow-xl">
+
+						<div className="w-fit rounded-lg bg-slate-800 p-8">
 							<img
-								className="mb-6 h-40 w-40 rounded-full object-cover"
 								src={portrait1}
-								alt="Portrait1"
+								alt="An employee"
+								className="mx-auto h-64 w-64 rounded-full"
 							/>
-							<h2 className="mb-1 text-white">Bob Green</h2>
-							<h3 className="text-gray-500">Senior Designer</h3>
+
+							<div className="pt-6">
+								<h3 className="font-semi-bold text-center text-white">
+									Leonard Krasner
+								</h3>
+								<p className="pt-1 text-center text-slate-400">
+									Senior Designer
+								</p>
+
+								<div className="flex justify-center gap-4 pt-6 text-slate-400">
+									<RiTwitterXFill />
+									<RiLinkedinBoxFill />
+								</div>
+							</div>
 						</div>
-						<button className="lg:text:xl rounded bg-red-500 px-4 py-2 font-bold text-white shadow-xl hover:cursor-pointer hover:bg-amber-500 md:text-lg">
-							Breaking News
-						</button>
 					</main>
 				</div>
 			</div>
 		</Document>
 	)
 }
-
 export const ErrorBoundary = GeneralErrorBoundary
