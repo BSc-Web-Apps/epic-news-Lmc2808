@@ -55,21 +55,23 @@ export default function App() {
 					<main className="grid h-full place-items-center">
 						<h1 className="text-mega">This is Epic News</h1>
 
-						<TeamMemberCard
-							name="Ben Green"
-							role="Trainee Assistant to the Assistant Manager"
-							imgSrc={portrait2}
-						/>
-						<TeamMemberCard
-							name="Theodore Ruth"
-							role="Junior Assistant"
-							imgSrc={portrait1}
-						/>
-						<TeamMemberCard
-							name="Jimmy Smith"
-							role="Assistant to the Assistant Manager"
-							imgSrc={portrait3}
-						/>
+						<div className="flex gap-4">
+							<TeamMemberCard
+								name="Ben Green"
+								role="Trainee Assistant to Assistant"
+								imgSrc={portrait2}
+							/>
+							<TeamMemberCard
+								name="Theodore Ruth"
+								role="Junior Assistant"
+								imgSrc={portrait1}
+							/>
+							<TeamMemberCard
+								name="Jimmy Smith"
+								role="Assistant to the Assistant Manager"
+								imgSrc={portrait3}
+							/>
+						</div>
 					</main>
 				</div>
 			</div>
