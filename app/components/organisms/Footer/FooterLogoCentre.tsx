@@ -4,7 +4,7 @@ import SocialMediaButtons from '#app/components/molecules/SocialMediaButtons'
 import { type FooterProps } from './FooterBasic'
 
 const FooterLogoCentre = ({
-	companyName = 'CHANGE THIS TO YOUR COMPANY NAME!',
+	companyName = 'EPIC NEWS!',
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (
