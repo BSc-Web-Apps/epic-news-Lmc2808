@@ -8,8 +8,8 @@ interface HeroCallToActionProps {
 const HeroCallToAction = ({
 	children,
 	image,
-	imageRight = false,
-	hasBackgroundColour = false,
+	imageRight = true,
+	hasBackgroundColour = true,
 }: HeroCallToActionProps) => {
 	return (
 		<div
