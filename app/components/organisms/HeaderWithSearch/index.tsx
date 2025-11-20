@@ -12,7 +12,7 @@ export default function HeaderWithSearch() {
 	const user = useOptionalUser()
 
 	return (
-		<header className="container py-6">
+		<header className="bg-secondary dark:bg-dark-secondary container py-6 lg:py-16">
 			<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
 				<div>
 					<Link to="/" className="flex w-20 items-center justify-center">
