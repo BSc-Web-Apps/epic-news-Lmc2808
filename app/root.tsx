@@ -61,7 +61,7 @@ export default function App() {
 				<HeaderWithSearch />
 				<div className="flex-1">
 					<main className="grid h-full place-items-center">
-						<h1 className="text-mega mt-8 mb-8 italic">Breaking News</h1>
+						<h1 className="text-mega mt-8 mb-0 italic">Breaking News</h1>
 
 						<div className="w-full py-4">
 							<div className="w-full py-16">
@@ -81,7 +81,7 @@ export default function App() {
 								</HeroCallToAction>
 							</div>
 						</div>
-
+						<h1 className="mt-8 mb-8 text-3xl italic">Meet Our Pundits</h1>
 						<div className="flex gap-4">
 							<TeamMemberCard
 								name="Ben Green"

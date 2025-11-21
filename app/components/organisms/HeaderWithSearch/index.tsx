@@ -19,7 +19,6 @@ export default function HeaderWithSearch() {
 					<Link to="/" className="flex w-20 items-center justify-center">
 						<img src={logo} />
 					</Link>
-					<span className="text-foreground text-sm">Epic News</span>
 				</div>
 				<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 					{searchBar}
