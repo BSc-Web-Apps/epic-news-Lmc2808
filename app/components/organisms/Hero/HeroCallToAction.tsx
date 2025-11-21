@@ -8,14 +8,14 @@ interface HeroCallToActionProps {
 const HeroCallToAction = ({
 	children,
 	image,
-	imageRight = false,
-	hasBackgroundColour = false,
+	imageRight = true,
+	hasBackgroundColour = true,
 }: HeroCallToActionProps) => {
 	return (
 		<div
 			className={`md:mx-auto md:flex md:max-w-6xl ${
 				imageRight && 'md:flex-row-reverse'
-			}`}
+			} ${hasBackgroundColour ? 'bg-secondary' : ''}`}
 		>
 			<div className="relative flex h-96 items-center justify-center overflow-hidden md:h-[32rem] md:w-1/2">
 				<img

@@ -1,4 +1,5 @@
 import { useMatches, Link } from 'react-router'
+import logo from '#app/assets/png/Epic-News-Logo-Red.png'
 import { SearchBar } from '#app/components/search-bar.tsx'
 import { Button } from '#app/components/ui/button.tsx'
 import { UserDropdown } from '#app/components/user-dropdown.tsx'
@@ -11,8 +12,14 @@ export default function HeaderWithSearch() {
 	const user = useOptionalUser()
 
 	return (
-		<header className="container py-6">
-			<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
+		<header className="mt-0 py-0">
+			<nav className="bg-secondary dark:bg-dark-secondary flex flex-wrap items-center justify-between gap-4 p-10 sm:flex-nowrap md:gap-8">
+				<div className="flex items-center gap-10"></div>
+				<div className="flex items-center gap-4">
+					<Link to="/" className="flex w-20 items-center justify-center">
+						<img src={logo} />
+					</Link>
+				</div>
 				<div className="ml-auto hidden max-w-sm flex-1 sm:block">
 					{searchBar}
 				</div>
