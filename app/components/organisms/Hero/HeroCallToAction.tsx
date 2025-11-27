@@ -13,7 +13,7 @@ const HeroCallToAction = ({
 }: HeroCallToActionProps) => {
 	return (
 		<div
-			className={`md:mx-auto md:flex md:max-w-6xl ${
+			className={`md:mx-auto md:flex md:max-w-full ${
 				imageRight && 'md:flex-row-reverse'
 			} ${hasBackgroundColour ? 'bg-secondary' : ''}`}
 		>

@@ -1,5 +1,5 @@
 import { RiLinkedinBoxFill, RiTwitterXFill } from 'react-icons/ri'
-import { useLoaderData } from 'react-router'
+import { useLoaderData, Outlet } from 'react-router'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { type Route } from './+types/root.ts'
 import { type loader } from './__root.server.tsx'
@@ -63,7 +63,7 @@ export default function App() {
 				<div className="flex h-screen flex-col justify-between">
 					<HeaderWithSearch />
 					<div className="flex-1">
-						<main className="w-full">
+						{/* <main className="w-full">
 							<h1 className="text-mega mt-8 mb-0 text-center italic">
 								Breaking News
 							</h1>
@@ -120,7 +120,9 @@ export default function App() {
 									imgSrc={portrait3}
 								/>
 							</div>
-						</main>
+						</main> */}
+
+						<Outlet />
 					</div>
 					<div className="container flex justify-between pb-5">
 						<ThemeSwitch userPreference={data?.requestInfo.userPrefs.theme} />

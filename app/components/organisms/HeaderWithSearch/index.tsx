@@ -15,14 +15,39 @@ export default function HeaderWithSearch() {
 		<header className="mt-0 py-0">
 			<nav className="bg-secondary dark:bg-dark-secondary flex flex-wrap items-center justify-between gap-4 p-10 sm:flex-nowrap md:gap-8">
 				<div className="flex items-center gap-10"></div>
-				<div className="flex items-center gap-4">
-					<Link to="/" className="flex w-20 items-center justify-center">
-						<img src={logo} />
-					</Link>
+				<div className="flex items-center gap-4"></div>
+				<Link to="/" className="flex w-20 items-center justify-center">
+					<img src={logo} />
+				</Link>
+
+				<div className="m-5 flex flex-1 gap-8">
+					<div className="m-5 ml-auto hidden max-w-sm flex-1 space-x-4 sm:block">
+						<Link
+							to="/about-us"
+							prefetch="intent"
+							className="text-muted-foreground hover:text-foreground text-sm font-semibold transition"
+						>
+							About us
+						</Link>
+						<Link
+							to="/contact-us"
+							prefetch="intent"
+							className="text-muted-foreground hover:text-foreground text-sm font-semibold transition"
+						>
+							Contact Us
+						</Link>
+						<Link
+							to="/news"
+							prefetch="intent"
+							className="text-muted-foreground hover:text-foreground text-sm font-semibold transition"
+						>
+							News
+						</Link>
+					</div>
 				</div>
-				<div className="ml-auto hidden max-w-sm flex-1 sm:block">
-					{searchBar}
-				</div>
+
+				{searchBar}
+
 				<div className="flex items-center gap-10">
 					{user ? (
 						<UserDropdown />
