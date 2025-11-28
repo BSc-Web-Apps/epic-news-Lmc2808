@@ -63,65 +63,6 @@ export default function App() {
 				<div className="flex h-screen flex-col justify-between">
 					<HeaderWithSearch />
 					<div className="flex-1">
-						{/* <main className="w-full">
-							<h1 className="text-mega mt-8 mb-0 text-center italic">
-								Breaking News
-							</h1>
-
-							<div className="w-full py-4">
-								<div className="w-full py-16">
-									<HeroCallToAction
-										image={heroImage}
-										imageRight={true}
-										hasBackgroundColour={true}
-									>
-										<div className="flex flex-col gap-8 px-8">
-											<h2 className="text-h2 bold">
-												Man believes the Sun is a Fake!
-											</h2>
-											<p className="text-lg">
-												Keep up to date with the latest tech news.
-											</p>
-										</div>
-									</HeroCallToAction>
-								</div>
-							</div>
-
-							<ParallaxBackground
-								title="Epic News"
-								image={heroImage}
-								logo={logo}
-								altText="Martial arts training background"
-							>
-								<div className="mt-10 text-center">
-									<button className="bg-secondary hover:bg-secondary-dark rounded-lg px-6 py-3 text-white shadow-md">
-										Join Us Today
-									</button>
-								</div>
-							</ParallaxBackground>
-
-							<h1 className="mt-8 mb-8 text-center text-3xl italic">
-								Meet Our Pundits
-							</h1>
-							<div className="flex justify-center gap-4">
-								<TeamMemberCard
-									name="Ben Green"
-									role="Trainee Assistant to Assistant"
-									imgSrc={portrait2}
-								/>
-								<TeamMemberCard
-									name="Theodore Ruth"
-									role="Junior Assistant"
-									imgSrc={portrait1}
-								/>
-								<TeamMemberCard
-									name="Jimmy Smith"
-									role="Assistant to the Assistant Manager"
-									imgSrc={portrait3}
-								/>
-							</div>
-						</main> */}
-
 						<Outlet />
 					</div>
 					<div className="container flex justify-between pb-5">

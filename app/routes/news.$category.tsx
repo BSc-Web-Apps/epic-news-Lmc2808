@@ -22,7 +22,12 @@ export default function NewsCategoryPage() {
 	return (
 		<div className="container py-16">
 			<h2 className="text-h2">{categoryTitle}</h2>
-			<div className="mt-8 grid grid-cols-5 grid-rows-2 gap-6">
+			<div className="mt-8 grid grid-cols-2 grid-rows-2 gap-6 md:grid-cols-3 lg:grid-cols-5">
+				<WireframeBlock />
+				<WireframeBlock />
+				<WireframeBlock />
+				<WireframeBlock />
+				<WireframeBlock />
 				<WireframeBlock />
 				<WireframeBlock />
 				<WireframeBlock />
