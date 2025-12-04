@@ -1,8 +1,8 @@
+import { useLoaderData } from 'react-router'
 import { requireUserId } from '#app/utils/auth.server.ts'
 import { type Route } from './+types/articles.new.ts'
 import { ArticleEditor } from './__article-editor.tsx'
 import { prisma } from '~/utils/db.server.ts'
-import { useLoaderData } from 'react-router'
 
 export { action } from './__article-editor.server.tsx'
 
