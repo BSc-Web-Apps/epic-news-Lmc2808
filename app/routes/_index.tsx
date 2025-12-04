@@ -32,19 +32,6 @@ export default function Index() {
 				</div>
 			</div>
 
-			<ParallaxBackground
-				title="Epic News"
-				image={heroImage}
-				logo={logo}
-				altText="Martial arts training background"
-			>
-				<div className="mt-10 text-center">
-					<button className="bg-secondary hover:bg-secondary-dark rounded-lg px-6 py-3 text-white shadow-md">
-						Join Us Today
-					</button>
-				</div>
-			</ParallaxBackground>
-
 			<h1 className="mt-8 mb-8 text-center text-3xl italic">
 				Meet Our Pundits
 			</h1>
