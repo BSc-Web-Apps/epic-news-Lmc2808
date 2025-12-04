@@ -15,7 +15,7 @@ const HeroCallToAction = ({
 		<div
 			className={`md:mx-auto md:flex md:max-w-full ${
 				imageRight && 'md:flex-row-reverse'
-			} ${hasBackgroundColour ? 'bg-secondary' : ''}`}
+			} ${hasBackgroundColour ? 'bg-slate-800' : ''}`}
 		>
 			<div className="relative flex h-96 items-center justify-center overflow-hidden md:h-[32rem] md:w-1/2">
 				<img
