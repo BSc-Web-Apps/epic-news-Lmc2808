@@ -8,18 +8,24 @@ const FooterLogoCentre = ({
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (
-		<footer className="bg-secondary dark:bg-dark-secondary lg:py-16">
+		<footer className="dark:bg-dark-secondary bg-slate-700 lg:py-16">
 			<div className="container">
 				<div className="border-muted-foreground/75 dark:border-dark-muted-foreground/75 flex flex-col items-center justify-around border-b lg:flex-row lg:pb-8">
-					<div className="text-secondary-foreground dark:text-dark-secondary-foreground flex flex-col items-start gap-6 py-8 font-bold lg:flex-row">
+					<div className="flex flex-col items-start gap-6 py-8 font-bold text-white lg:flex-row">
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#" className="text-white">
+								Nav Label
+							</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#" className="text-white">
+								Nav Label
+							</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#" className="text-white">
+								Nav Label
+							</NavLink>
 						</div>
 					</div>
 
@@ -27,15 +33,21 @@ const FooterLogoCentre = ({
 						<img src={logo} alt={altText} />
 					</Link>
 
-					<div className="text-secondary-foreground dark:text-dark-secondary-foreground flex flex-col items-start gap-6 py-8 font-bold lg:flex-row">
+					<div className="flex flex-col items-start gap-6 py-8 font-bold text-white lg:flex-row">
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#" className="text-white">
+								Nav Label
+							</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#" className="text-white">
+								Nav Label
+							</NavLink>
 						</div>
 						<div>
-							<NavLink to="#">Nav Label</NavLink>
+							<NavLink to="#" className="text-white">
+								Nav Label
+							</NavLink>
 						</div>
 					</div>
 				</div>
@@ -45,7 +57,7 @@ const FooterLogoCentre = ({
 						<div className="mb-8 flex justify-center">
 							<SocialMediaButtons />
 						</div>
-						<div className="text-secondary-foreground/75 dark:text-dark-secondary-foreground/75 text-center">
+						<div className="foreground/75 dark:text-dark-secondary-foreground/75 text-center text-white">
 							{companyName} | {new Date().getFullYear()}
 						</div>
 					</div>
