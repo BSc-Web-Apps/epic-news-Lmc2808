@@ -1,6 +1,6 @@
 import { invariant } from '@epic-web/invariant'
 import { type LoaderFunctionArgs, data, useLoaderData } from 'react-router'
-import ArticleCard from '~/components/ArticleCard.tsx'
+import ArticleCard from '#app/components/organisms/ArticleCard.tsx'
 import { prisma } from '~/utils/db.server.ts'
 import { toTitleCase } from '~/utils/stringUtils.ts'
 
@@ -20,7 +20,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 			id: true,
 			title: true,
 			category: { select: { name: true } },
-			images: { select: { id: true } },
+			images: { select: { id: true, objectKey: true } },
 		},
 	})
 
@@ -32,15 +32,14 @@ export default function NewsCategoryPage() {
 
 	return (
 		<div className="container py-16">
-			<h2 className="text-h2 mb-8">{categoryTitle}</h2>
-
-			<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+			<h2 className="text-h2">{categoryTitle}</h2>
+			<div className="mt-8 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
 				{filteredArticles.map((article) => (
 					<ArticleCard
 						key={article.id}
-						articleId={article.id}
 						title={article.title}
 						category={article.category?.name}
+						objectKey={article.images[0]?.objectKey}
 					/>
 				))}
 			</div>
