@@ -25,7 +25,7 @@ export default function HeaderWithSearch() {
 						prefetch="intent"
 						className="rounded bg-slate-400 px-4 py-2 font-bold text-white hover:bg-slate-500"
 					>
-						Home
+						About Us
 					</Link>
 					<Link
 						to="/news"

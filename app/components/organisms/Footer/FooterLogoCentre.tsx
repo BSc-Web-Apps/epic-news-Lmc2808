@@ -10,45 +10,35 @@ const FooterLogoCentre = ({
 	return (
 		<footer className="dark:bg-dark-secondary bg-slate-700 lg:py-16">
 			<div className="container">
-				<div className="border-muted-foreground/75 dark:border-dark-muted-foreground/75 flex flex-col items-center justify-around border-b lg:flex-row lg:pb-8">
-					<div className="flex flex-col items-start gap-6 py-8 font-bold text-white lg:flex-row">
-						<div>
-							<NavLink to="#" className="text-white">
-								Nav Label
-							</NavLink>
-						</div>
-						<div>
-							<NavLink to="#" className="text-white">
-								Nav Label
-							</NavLink>
-						</div>
-						<div>
-							<NavLink to="#" className="text-white">
-								Nav Label
-							</NavLink>
-						</div>
+				<div className="border-muted-foreground/75 dark:border-dark-muted-foreground/75 grid grid-cols-3 items-center border-b lg:pb-8">
+					<div className="flex flex-col items-start justify-center gap-6 py-8 font-bold text-white lg:flex-row">
+						<NavLink to="/news/technology" className="text-white">
+							Technology
+						</NavLink>
+						<NavLink to="/news/entertainment" className="text-white">
+							Entertainment
+						</NavLink>
+						<NavLink to="/news/business" className="text-white">
+							Business
+						</NavLink>
 					</div>
 
-					<Link to="/" className="flex w-20 items-center justify-center">
-						<img src={logo} alt={altText} />
-					</Link>
+					<div className="flex justify-center">
+						<Link to="/" className="flex w-20 items-center justify-center">
+							<img src={logo} alt={altText} />
+						</Link>
+					</div>
 
-					<div className="flex flex-col items-start gap-6 py-8 font-bold text-white lg:flex-row">
-						<div>
-							<NavLink to="#" className="text-white">
-								Nav Label
-							</NavLink>
-						</div>
-						<div>
-							<NavLink to="#" className="text-white">
-								Nav Label
-							</NavLink>
-						</div>
-						<div>
-							<NavLink to="#" className="text-white">
-								Nav Label
-							</NavLink>
-						</div>
+					<div className="flex flex-col items-start justify-center gap-6 py-8 font-bold text-white lg:flex-row">
+						<NavLink to="/news" className="text-white">
+							UK News
+						</NavLink>
+						<NavLink to="/news" className="text-white">
+							US News
+						</NavLink>
+						<NavLink to="/news" className="text-white">
+							Sports
+						</NavLink>
 					</div>
 				</div>
 
