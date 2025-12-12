@@ -1,8 +1,19 @@
-import { data, NavLink, Outlet, useLoaderData } from 'react-router'
+import {
+	type LoaderFunctionArgs,
+	data,
+	NavLink,
+	Outlet,
+	useLoaderData,
+} from 'react-router'
 import { prisma } from '~/utils/db.server.ts'
 import { cn } from '~/utils/misc.tsx'
+import { requireUserWithRole } from '~/utils/permissions.server.js'
+import { Button } from '~/components/atoms/Button.js'
+import { GeneralErrorBoundary } from '#app/components/error-boundary.tsx'
 
-export async function loader() {
+export async function loader({ request }: LoaderFunctionArgs) {
+	await requireUserWithRole(request, 'admin')
+
 	const allArticles = await prisma.article.findMany({
 		select: { id: true, title: true, isPublished: true },
 	})
@@ -63,5 +74,32 @@ export default function ArticlesRoute() {
 				</div>
 			</div>
 		</main>
+	)
+}
+
+export function ErrorBoundary() {
+	return (
+		<GeneralErrorBoundary
+			statusHandlers={{
+				403: () => (
+					<div className="flex min-h-[60vh] items-center justify-center px-4">
+						<div className="w-full max-w-lg rounded-lg bg-slate-800 p-8 text-center text-white shadow-lg">
+							<p className="mb-4 text-xl font-semibold">
+								You are not allowed to access this page.
+							</p>
+							<p className="mb-6">
+								Please login with an administrator account, or contact support.
+							</p>
+
+							<Button className="rounded bg-red-600 px-6 py-2 text-white hover:bg-red-700">
+								<NavLink to="/login" className="text-lg font-semibold">
+									Login
+								</NavLink>
+							</Button>
+						</div>
+					</div>
+				),
+			}}
+		/>
 	)
 }

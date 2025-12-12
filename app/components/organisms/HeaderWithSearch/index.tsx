@@ -3,13 +3,14 @@ import logo from '#app/assets/png/Epic-News-Logo-Red.png'
 import { SearchBar } from '#app/components/search-bar.tsx'
 import { Button } from '#app/components/ui/button.tsx'
 import { UserDropdown } from '#app/components/user-dropdown.tsx'
-import { useOptionalUser } from '#app/utils/user.ts'
+import { useOptionalUser, userHasRole } from '#app/utils/user.ts'
 
 export default function HeaderWithSearch() {
 	const matches = useMatches()
 	const isOnSearchPage = matches.find((m) => m.id === 'routes/users+/index')
 	const searchBar = isOnSearchPage ? null : <SearchBar status="idle" />
 	const user = useOptionalUser()
+	const isAdminUser = user ? userHasRole(user, 'admin') : false
 
 	return (
 		<header className="mt-0 py-0">
@@ -20,6 +21,14 @@ export default function HeaderWithSearch() {
 				</Link>
 
 				<div className="flex flex-1 items-center justify-center gap-6">
+					{isAdminUser && (
+						<Link
+							to="/admin-review"
+							className="rounded bg-slate-400 px-4 py-2 font-bold text-white italic hover:bg-red-800"
+						>
+							Admin Review
+						</Link>
+					)}
 					<Link
 						to="/about-us"
 						prefetch="intent"

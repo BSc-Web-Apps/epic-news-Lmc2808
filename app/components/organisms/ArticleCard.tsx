@@ -25,10 +25,10 @@ export default function ArticleCard({
 	const imageSrc = objectKey ? getArticleImgSrc(objectKey) : siteLogo
 
 	const categoryIcons: { [key: string]: ReactElement } = {
-		Business: <MdOutlineBusinessCenter size={20} className="text-red-300" />,
-		Entertainment: <MdOutlineTheaters size={20} className="text-red-300" />,
-		Technology: <MdOutlineDesktopMac size={20} className="text-red-300" />,
-		'General news': <MdOutlineNewspaper size={20} className="text-red-300" />,
+		Business: <MdOutlineBusinessCenter size={20} className="text-white" />,
+		Entertainment: <MdOutlineTheaters size={20} className="text-white" />,
+		Technology: <MdOutlineDesktopMac size={20} className="text-white" />,
+		'General news': <MdOutlineNewspaper size={20} className="text-white" />,
 	}
 
 	return (
@@ -46,7 +46,7 @@ export default function ArticleCard({
 
 					<div className="flex items-center gap-2">
 						{categoryIcons[category]}
-						<p className="text-sm text-red-300">{category}</p>
+						<p className="text-sm text-white">{category}</p>
 					</div>
 				</div>
 			</div>
