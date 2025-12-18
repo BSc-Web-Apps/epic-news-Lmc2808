@@ -5,7 +5,6 @@ import heroImage from '~/assets/jpg/Hero-Image.jpg'
 import portrait1 from '~/assets/jpg/portrait-01.jpg'
 import portrait2 from '~/assets/jpg/portrait-02.jpg'
 import portrait3 from '~/assets/jpg/portrait-03.jpg'
-import logo from '~/assets/png/epic-news-logo-red.png'
 import ArticleCard from '~/components/organisms/ArticleCard.tsx'
 import { prisma } from '~/utils/db.server.ts'
 
@@ -48,28 +47,30 @@ export default function Index() {
 				</HeroCallToAction>
 			</div>
 
-			<h1 className="mt-8 mb-8 text-center text-3xl italic">
-				Meet Our Pundits
-			</h1>
-			<div className="flex justify-center gap-4">
-				<TeamMemberCard
-					name="Ben Green"
-					role="Trainee Assistant to Assistant"
-					imgSrc={portrait2}
-				/>
-				<TeamMemberCard
-					name="Theodore Ruth"
-					role="Junior Assistant"
-					imgSrc={portrait1}
-				/>
-				<TeamMemberCard
-					name="Jimmy Smith"
-					role="Assistant to the Assistant Manager"
-					imgSrc={portrait3}
-				/>
+			<div className="container py-4">
+				<h1 className="mt-8 mb-8 text-center text-3xl italic">
+					Meet Our Pundits
+				</h1>
+				<div className="flex justify-center gap-4">
+					<TeamMemberCard
+						name="Ben Green"
+						role="Trainee Assistant to Assistant"
+						imgSrc={portrait2}
+					/>
+					<TeamMemberCard
+						name="Theodore Ruth"
+						role="Junior Assistant"
+						imgSrc={portrait1}
+					/>
+					<TeamMemberCard
+						name="Jimmy Smith"
+						role="Assistant to the Assistant Manager"
+						imgSrc={portrait3}
+					/>
+				</div>
 			</div>
-			<div className="container py-16">
-				<h2 className="text-h2 mb-8 font-normal">Latest news</h2>
+			<div className="container py-4">
+				<h2 className="mb-8 text-center text-3xl italic">Latest news</h2>
 
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
 					{allArticles.length > 0 ? (
