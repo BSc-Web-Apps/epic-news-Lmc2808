@@ -29,8 +29,9 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
 export default function NewsCategoryPage() {
 	const { categoryTitle, filteredArticles } = useLoaderData<typeof loader>()
+	const hasArticles = filteredArticles.length > 0
 
-	return (
+	return hasArticles ? (
 		<div className="container py-16">
 			<h2 className="text-h2">{categoryTitle}</h2>
 			<div className="mt-8 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
@@ -44,6 +45,10 @@ export default function NewsCategoryPage() {
 					/>
 				))}
 			</div>
+		</div>
+	) : (
+		<div className="text-h2 container py-16 text-center">
+			There are No Published {categoryTitle} Articles Available
 		</div>
 	)
 }
