@@ -59,7 +59,7 @@ export default function ArticlePage() {
 				<p>By {article.owner?.name}</p>
 			</div>
 
-			<p className="text-lg leading-relaxed text-black">{article.content}</p>
+			<p className="text-lg leading-relaxed">{article.content}</p>
 		</div>
 	)
 }
