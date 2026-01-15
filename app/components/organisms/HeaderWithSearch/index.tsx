@@ -37,21 +37,21 @@ export default function HeaderWithSearch() {
 						About Us
 					</Link>
 					<Link
-						to="/news"
+						to="/news/uk-news"
 						prefetch="intent"
 						className="rounded bg-slate-400 px-4 py-2 font-bold text-white hover:bg-slate-500"
 					>
 						UK News
 					</Link>
 					<Link
-						to="/news"
+						to="/news/us-news"
 						prefetch="intent"
 						className="rounded bg-slate-400 px-4 py-2 font-bold text-white hover:bg-slate-500"
 					>
 						US News
 					</Link>
 					<Link
-						to="/news"
+						to="/news/sports"
 						prefetch="intent"
 						className="rounded bg-slate-400 px-4 py-2 font-bold text-white hover:bg-slate-500"
 					>

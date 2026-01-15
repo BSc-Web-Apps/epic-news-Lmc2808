@@ -6,9 +6,11 @@ import { prisma } from '~/utils/db.server.ts'
 import { getArticleImgSrc } from '~/utils/misc.tsx'
 
 export const meta: MetaFunction = () => [{ title: 'Epic News' }]
+
 export async function loader() {
-	const allArticles = await prisma.article.findMany({
+	const latestArticle = await prisma.article.findFirst({
 		where: { isPublished: true },
+		orderBy: { publishedAt: 'desc' },
 		select: {
 			id: true,
 			title: true,
@@ -17,12 +19,61 @@ export async function loader() {
 		},
 	})
 
-	return data({ allArticles })
+	const techArticles = await prisma.article.findMany({
+		where: {
+			isPublished: true,
+			category: { slug: 'technology' },
+		},
+		select: {
+			id: true,
+			title: true,
+			category: { select: { name: true } },
+			images: { select: { objectKey: true } },
+		},
+	})
+
+	const entertainmentArticles = await prisma.article.findMany({
+		where: {
+			isPublished: true,
+			category: { slug: 'entertainment' },
+		},
+		select: {
+			id: true,
+			title: true,
+			category: { select: { name: true } },
+			images: { select: { objectKey: true } },
+		},
+	})
+
+	const businessArticles = await prisma.article.findMany({
+		where: {
+			isPublished: true,
+			category: { slug: 'business' },
+		},
+		select: {
+			id: true,
+			title: true,
+			category: { select: { name: true } },
+			images: { select: { objectKey: true } },
+		},
+	})
+
+	return data({
+		techArticles,
+		entertainmentArticles,
+		businessArticles,
+		latestArticle,
+	})
 }
 
 export default function Index() {
-	const { allArticles } = useLoaderData<typeof loader>()
-	const mainArticle = allArticles[0]
+	const {
+		latestArticle,
+		techArticles,
+		entertainmentArticles,
+		businessArticles,
+	} = useLoaderData<typeof loader>()
+	const mainArticle = latestArticle
 
 	return (
 		<main className="w-full">
@@ -53,11 +104,12 @@ export default function Index() {
 			</div>
 
 			<div className="container py-4">
-				<h2 className="mb-8 text-center text-5xl italic">Latest News</h2>
-
+				<h2 className="mb-8 text-center text-5xl italic">
+					Latest Technology News
+				</h2>
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-					{allArticles.length > 0 ? (
-						allArticles.map((article) => (
+					{techArticles.length > 0 ? (
+						techArticles.map((article) => (
 							<ArticleCard
 								key={article.id}
 								articleId={article.id}
@@ -67,7 +119,45 @@ export default function Index() {
 							/>
 						))
 					) : (
-						<p>No articles found</p>
+						<p>No Technology articles found</p>
+					)}
+				</div>
+			</div>
+
+			<div className="container py-4">
+				<h2 className="mb-8 text-center text-5xl italic">Entertainment</h2>
+				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+					{entertainmentArticles.length > 0 ? (
+						entertainmentArticles.map((article) => (
+							<ArticleCard
+								key={article.id}
+								articleId={article.id}
+								title={article.title}
+								category={article.category?.name}
+								objectKey={article.images[0]?.objectKey}
+							/>
+						))
+					) : (
+						<p>No Entertainment articles found</p>
+					)}
+				</div>
+			</div>
+
+			<div className="container py-4">
+				<h2 className="mb-8 text-center text-5xl italic">Business</h2>
+				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+					{businessArticles.length > 0 ? (
+						businessArticles.map((article) => (
+							<ArticleCard
+								key={article.id}
+								articleId={article.id}
+								title={article.title}
+								category={article.category?.name}
+								objectKey={article.images[0]?.objectKey}
+							/>
+						))
+					) : (
+						<p>No Business articles found</p>
 					)}
 				</div>
 			</div>

@@ -33,6 +33,33 @@ export default function NewsPage() {
 					>
 						Business
 					</NavLink>
+					<NavLink
+						to="uk-news"
+						prefetch="intent"
+						className={({ isActive }) =>
+							`${isActive ? 'text-blue-300 underline underline-offset-8' : 'text-blue-500'}`
+						}
+					>
+						UK News
+					</NavLink>
+					<NavLink
+						to="us-news"
+						prefetch="intent"
+						className={({ isActive }) =>
+							`${isActive ? 'text-blue-300 underline underline-offset-8' : 'text-blue-500'}`
+						}
+					>
+						US News
+					</NavLink>
+					<NavLink
+						to="sports"
+						prefetch="intent"
+						className={({ isActive }) =>
+							`${isActive ? 'text-blue-300 underline underline-offset-8' : 'text-blue-500'}`
+						}
+					>
+						Sports
+					</NavLink>
 				</div>
 			</div>
 
