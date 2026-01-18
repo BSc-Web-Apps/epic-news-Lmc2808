@@ -1,7 +1,7 @@
 import { Parallax, useParallaxController } from 'react-scroll-parallax'
 
 interface ParallaxBackgroundProps {
-	description?: string
+	description?: boolean
 	title?: string
 	image: string
 	logo?: string
@@ -10,7 +10,7 @@ interface ParallaxBackgroundProps {
 }
 
 const ParallaxBackground = ({
-	description,
+	description = false,
 	title,
 	image,
 	logo,
@@ -40,9 +40,9 @@ const ParallaxBackground = ({
 					/>
 					<div className="bg-primary-light absolute inset-0 mix-blend-multiply" />
 				</div>
-				<div className="relative px-4 pb-8 pt-16 sm:px-6 sm:pb-14 sm:pt-24 lg:px-8 lg:pb-20 lg:pt-32">
+				<div className="relative px-4 pt-16 pb-8 sm:px-6 sm:pt-24 sm:pb-14 lg:px-8 lg:pt-32 lg:pb-20">
 					<h1 className="text-center text-6xl font-extrabold tracking-tight sm:text-8xl lg:text-9xl">
-						<span className="via-secondary-dark block bg-gradient-to-r from-secondary to-secondary bg-clip-text uppercase text-transparent drop-shadow-md">
+						<span className="via-secondary-dark from-secondary to-secondary block bg-gradient-to-r bg-clip-text text-transparent uppercase drop-shadow-md">
 							{title}
 						</span>
 					</h1>
