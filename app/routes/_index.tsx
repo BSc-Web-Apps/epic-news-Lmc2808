@@ -125,7 +125,9 @@ export default function Index() {
 			</div>
 
 			<div className="container py-4">
-				<h2 className="mb-8 text-center text-5xl italic">Entertainment</h2>
+				<h2 className="mb-8 text-center text-5xl italic">
+					Latest Entertainment News
+				</h2>
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
 					{entertainmentArticles.length > 0 ? (
 						entertainmentArticles.map((article) => (
@@ -144,7 +146,9 @@ export default function Index() {
 			</div>
 
 			<div className="container py-4">
-				<h2 className="mb-8 text-center text-5xl italic">Business</h2>
+				<h2 className="mb-8 text-center text-5xl italic">
+					Latest Business News
+				</h2>
 				<div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
 					{businessArticles.length > 0 ? (
 						businessArticles.map((article) => (
