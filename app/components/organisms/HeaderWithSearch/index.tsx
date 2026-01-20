@@ -36,20 +36,22 @@ export default function HeaderWithSearch() {
 					>
 						About Us
 					</Link>
+
 					<Link
-						to="/news/uk-news"
+						to="/news/technology"
 						prefetch="intent"
 						className="rounded bg-slate-400 px-4 py-2 font-bold text-white hover:bg-slate-500"
 					>
-						UK News
+						Technology
 					</Link>
 					<Link
-						to="/news/us-news"
+						to="/news/business"
 						prefetch="intent"
 						className="rounded bg-slate-400 px-4 py-2 font-bold text-white hover:bg-slate-500"
 					>
-						US News
+						Business
 					</Link>
+
 					<Link
 						to="/news/sports"
 						prefetch="intent"

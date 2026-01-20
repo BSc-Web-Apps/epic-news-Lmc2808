@@ -30,14 +30,14 @@ const FooterLogoCentre = ({
 					</div>
 
 					<div className="flex flex-col items-start justify-center gap-6 py-8 font-bold text-white lg:flex-row">
-						<NavLink to="/news/uk-news" className="text-white">
-							UK News
+						<NavLink to="/news/technology" className="text-white">
+							Technology
 						</NavLink>
-						<NavLink to="/news/us-news" className="text-white">
-							US News
+						<NavLink to="/news/entertainment" className="text-white">
+							Entertainment
 						</NavLink>
-						<NavLink to="/news/sports" className="text-white">
-							Sports
+						<NavLink to="/news/business" className="text-white">
+							Business
 						</NavLink>
 					</div>
 				</div>
