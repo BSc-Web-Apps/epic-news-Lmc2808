@@ -1,42 +1,44 @@
 import { Link, NavLink } from 'react-router'
-import logo from '#app/assets/svg/icon-placeholder.svg'
+import logo from '#app/assets/png/Epic-News-Logo-Red.png'
 import SocialMediaButtons from '#app/components/molecules/SocialMediaButtons'
 import { type FooterProps } from './FooterBasic'
 
 const FooterLogoCentre = ({
-	companyName = 'CHANGE THIS TO YOUR COMPANY NAME!',
+	companyName = 'EPIC NEWS!',
 	altText = 'Our company logo',
 }: FooterProps) => {
 	return (
-		<footer className="bg-secondary dark:bg-dark-secondary lg:py-16">
+		<footer className="dark:bg-dark-secondary bg-slate-700 lg:py-16">
 			<div className="container">
-				<div className="border-muted-foreground/75 dark:border-dark-muted-foreground/75 flex flex-col items-center justify-around border-b lg:flex-row lg:pb-8">
-					<div className="text-secondary-foreground dark:text-dark-secondary-foreground flex flex-col items-start gap-6 py-8 font-bold lg:flex-row">
-						<div>
-							<NavLink to="#">Nav Label</NavLink>
-						</div>
-						<div>
-							<NavLink to="#">Nav Label</NavLink>
-						</div>
-						<div>
-							<NavLink to="#">Nav Label</NavLink>
-						</div>
+				<div className="border-muted-foreground/75 dark:border-dark-muted-foreground/75 grid grid-cols-3 items-center border-b lg:pb-8">
+					<div className="flex flex-col items-start justify-center gap-6 py-8 font-bold text-white lg:flex-row">
+						<NavLink to="/news/technology" className="text-white">
+							Technology
+						</NavLink>
+						<NavLink to="/news/entertainment" className="text-white">
+							Entertainment
+						</NavLink>
+						<NavLink to="/news/business" className="text-white">
+							Business
+						</NavLink>
 					</div>
 
-					<Link to="/" className="flex w-20 items-center justify-center">
-						<img src={logo} alt={altText} />
-					</Link>
+					<div className="flex justify-center">
+						<Link to="/" className="flex w-20 items-center justify-center">
+							<img src={logo} alt={altText} />
+						</Link>
+					</div>
 
-					<div className="text-secondary-foreground dark:text-dark-secondary-foreground flex flex-col items-start gap-6 py-8 font-bold lg:flex-row">
-						<div>
-							<NavLink to="#">Nav Label</NavLink>
-						</div>
-						<div>
-							<NavLink to="#">Nav Label</NavLink>
-						</div>
-						<div>
-							<NavLink to="#">Nav Label</NavLink>
-						</div>
+					<div className="flex flex-col items-start justify-center gap-6 py-8 font-bold text-white lg:flex-row">
+						<NavLink to="/news/technology" className="text-white">
+							Technology
+						</NavLink>
+						<NavLink to="/news/entertainment" className="text-white">
+							Entertainment
+						</NavLink>
+						<NavLink to="/news/business" className="text-white">
+							Business
+						</NavLink>
 					</div>
 				</div>
 
@@ -45,7 +47,7 @@ const FooterLogoCentre = ({
 						<div className="mb-8 flex justify-center">
 							<SocialMediaButtons />
 						</div>
-						<div className="text-secondary-foreground/75 dark:text-dark-secondary-foreground/75 text-center">
+						<div className="foreground/75 dark:text-dark-secondary-foreground/75 text-center text-white">
 							{companyName} | {new Date().getFullYear()}
 						</div>
 					</div>
