@@ -54,7 +54,7 @@ export default function ArticlePage() {
 				className="mb-8 max-h-[375px] w-full rounded object-cover"
 			/>
 
-			<div className="mb-8 flex items-center gap-4 text-slate-800 italic">
+			<div className="mb-8 flex items-center gap-4 italic">
 				<p>{article.category?.name}</p>
 				<p>By {article.owner?.name}</p>
 			</div>
